@@ -29,3 +29,10 @@ value: private ip of ec2
 
 ####05:07
 private hosted zones in Route53 are aeasy to cofig without affecting production
+
+
+###6 Using an elastic IP and Route 53
+####02:30 create a record set.  
+type->A  (replace previous s3 route)
+alias: no
+value: elastic ip
