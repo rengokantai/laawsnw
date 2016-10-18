@@ -106,6 +106,72 @@ IAM policy
 The question is what type of access do I want to allow incidences within my VPC to have to S3.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##3. VPC Security
+###1 Understanding security groups
+####01:00
+500/50/5 rule 
+There are 5 security groups allowed per network interface. There are 50 rules allowed per security group.  
+And finally, there are 500 security groups allowed in a given VPC.  
+
+####02:38
+security groups are stateful. Responses to any outbound connection will always be allowed, regardless of any rules limiting inbound traffic.
+
+
+###2 Configuring security groups
+
+
+
+###3 Understanding network ACLs
+NACLs, are a tool for controlling how traffic flows into, and out of, subnets within a VPC
+
+First off, NACLs exist within the confines of a single VPC, and do not span VPCs. If you want to use the same NACL ruleset in multiple VPCs, you'll have to configure the NACL in each VPC. Within a VPC, NACLs can be associated with one, or more, subnets. However, each subnet can only be associated with one, and only one.
+
+###5 Configuring network ACLs
+####05:20
+Since NACLs are stateless, when creating an inbound rule, must also create same outbound rule
+
+
+###6 Understanding VPC flow logs
+VPC Flow Logs are a way to log network traffic associated with a VPC.
+
+
+
+####01:50
+You can't create a Flow Log for a peered VPC connection, unless that VPC is in the same AWS account. Once a Flow Log is created, its configuration cannot be altered. If you want to alter a Flow Log's configuration, the only way to do it is by creating a new Flow Log and deleting the old one. 
+
+###7 Explore VPC Flow Logs
+####00:43
+cloudwatch->logs->create log group  
+
+####02:45
+put destination log group with the group we just created.  
+
+
+##4. VPC Peering
+###2 Implement VPC peering
+###3 Configure VPC peer routing
+####02:30
+If vpc1's pri want to access vpc2's pub and pri, in vpc1's pri's route table,add  
+dest->
+
+
+
+
 ##5. Route 53
 ###2 Use Route 53 alias
 ####00:20
