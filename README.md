@@ -47,6 +47,8 @@ create a tag
 ```
 aws ec2 create-tags --resources subnet-12345678 --tags Key=k,Value=v --profile ke
 ```
+
+
 ###5 Configuring route tables
 Main route table can be modified but not deleted.  
 ####02:56 create routetable
@@ -61,6 +63,33 @@ tags
 ```
 aws ect create-tags --resources rtb-12345678 --tags Key=k,Value=v --profile ke
 ```
+
+
+###6 Configuring an Internet gateway
+####04:10 create igw
+```
+aws ec2 create-internet-gateway --profile ke
+```
+add tag
+```
+aws ec2 create-tags --resources igw-12345678 --tags Key=k,Value=v --profile ke
+```
+attach to vpc
+```
+aws ec2 attach-internet-gateway --internet-gateway-id igw-12345678 --vpc-id vpc-12345678 --profile ke
+```
+create route
+```
+aws ec2 create-route --route-table-id rtb-12345678 --desination-cidr-block 0.0.0.0/0 --gateway-id igw-12345678 --profile ke
+```
+
+
+
+
+
+
+
+
 
 
 
