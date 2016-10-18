@@ -85,13 +85,25 @@ aws ec2 create-route --route-table-id rtb-12345678 --desination-cidr-block 0.0.0
 
 
 
+###7 Configuring a NAT gateway
+
+NAT instance: support port forwarding,support bastion host    
+NAT gateway: does not support port forwarding, does not support bastion host   
+
+
+####03:20 create NAT gateway in public subnet.
+
+####05:23 
+then in parivate route table, add destnation=0.0.0.0/0, target=nat gateway
 
 
 
+###8 Configuring VPC endpoint for S3
+While S3 is the only currently available VPC endpoint,AWS has stated that it is working on creating additional types of VPC endpoints.  
 
-
-
-
+####01:39 create endpoint
+IAM policy  
+The question is what type of access do I want to allow incidences within my VPC to have to S3.
 
 
 ##5. Route 53
