@@ -47,10 +47,20 @@ create a tag
 ```
 aws ec2 create-tags --resources subnet-12345678 --tags Key=k,Value=v --profile ke
 ```
-
-
-
-
+###5 Configuring route tables
+Main route table can be modified but not deleted.  
+####02:56 create routetable
+```
+aws ec2 create-route-table --vpc-id vpc-12345678 --profile ke
+```
+associate
+```
+aws ec2 associate-route-table --route-table-id rtb-12345678 --subnet-id subnet-12345678 --profile ke
+```
+tags
+```
+aws ect create-tags --resources rtb-12345678 --tags Key=k,Value=v --profile ke
+```
 
 
 
