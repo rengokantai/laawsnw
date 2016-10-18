@@ -167,7 +167,14 @@ put destination log group with the group we just created.
 ###3 Configure VPC peer routing
 ####02:30
 If vpc1's pri want to access vpc2's pub and pri, in vpc1's pri's route table,add  
-dest->
+dest->vpc2's cidr, target->pcx-xxx  
+
+
+####03:53
+add route in vpc2's public subnet's route table in order to connect vpc1's pri subnet.  
+
+
+add route in vpc2's private subnet's route table in order to connect vpc1's pri subnet.  
 
 
 
